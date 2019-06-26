@@ -12,7 +12,7 @@
       </context>
     </input>
     <input pattern="*">
-  <output value="Например, привет"/>
+  <output value="Доброго времени суток!"/>
 </input>
 <input pattern="* пока *">
  <var name="end_session" value="javascript: true"/>
