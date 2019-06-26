@@ -1,0 +1,23 @@
+<context>
+  <text>
+  <input pattern="* (привет*|здравствуй*) *">
+    <output value="Привет, $UserName!" if="full($UserName)"/>
+
+    <context if="empty($UserName)">
+      <output value="Привет! А как тебя зовут?"/>
+
+        <input pattern="$Text">
+          <var name="UserName" value="cap($Text)" scope="user"/>
+          <output value="Приятно познакомиться, $UserName!"/>
+        </input>
+      </context>
+    </input>
+    <input pattern="*">
+  <output value="Например, привет"/>
+</input>
+<input pattern="* пока *">
+ <var name="end_session" value="javascript: true"/>
+ <output value="Пока"/>
+</input>
+</text>
+</context>
